@@ -34,11 +34,22 @@ function preload_images() {
 /* Get cavas context. */
 let c = document.getElementById("canvas").getContext("2d");
 
-/* Preload all images. */
+/* The number of cards. */
+let rows = 4;
+let columns = 6;
+
+let x_width = (1000 - 2 * 5 - (columns - 1) * 5) / columns;
+let y_width = (1000 - 2 * 5 - (rows - 1) * 5) / rows;
+
+/* Pre-load all images. */
 preload_images().done(function(images) {
 
-    c.drawImage(images[0], 5, 5, 100, 100);
-    c.drawImage(images[1], 105, 5, 100, 100);
-    c.drawImage(images[2], 210, 5, 100, 100);
-
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < columns; j++) {
+            c.drawImage(images[0],
+                        5 + j * x_width + j * 5,
+                        5 + i * y_width + i * 5,
+                        x_width, y_width);
+        }
+    }
 })
