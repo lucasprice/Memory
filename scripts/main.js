@@ -150,6 +150,8 @@ preload_images(image_files).done(function(images) {
         place_tile(tiles[n], back, image_groups);
     }
 
+    let number_of_flipped_tiles = 0;
+
     /* The game code. */
     c.onclick = function(e) {
         mouse_position = get_mouse_position(c, e);
@@ -160,8 +162,11 @@ preload_images(image_files).done(function(images) {
                 mouse_position.y <= tiles[n].y + y_width)
             {
                 flip_tile(tiles[n], back, image_groups);
-                break;
+
+                /* Check how many tiles are flipped. */
+                number_of_flipped_tiles++;
+                if (number_of_flipped_tiles == images_per_tile) {
+                }
             }
         }
-    }
 })
