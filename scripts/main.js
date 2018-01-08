@@ -70,6 +70,9 @@ let image_files = [
     "images/Skull.png",
     "images/Skull.png",
     "images/Skull.png",
+    "images/Truck.png",
+    "images/Truck.png",
+    "images/Truck.png",
     "images/House 1.png",
     "images/House 2.png",
     "images/House 3.png"
@@ -169,4 +172,5 @@ preload_images(image_files).done(function(images) {
                 }
             }
         }
+    }
 })
